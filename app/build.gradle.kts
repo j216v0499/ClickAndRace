@@ -57,7 +57,7 @@ android {
 dependencies {
 
     // Import the Firebase BoM
-    implementation(platform(libs.firebase.bom))
+    implementation(platform("com.google.firebase:firebase-bom:33.11.0"))
 
 
     // TODO: Add the dependencies for Firebase products you want to use
@@ -65,7 +65,7 @@ dependencies {
     implementation(libs.firebase.analytics)
 
 
-
+    
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
