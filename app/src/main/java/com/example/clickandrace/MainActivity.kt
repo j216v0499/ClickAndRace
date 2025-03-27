@@ -13,11 +13,23 @@ import com.example.clickandrace.ui.navigation.BottomNavBar
 import com.example.clickandrace.ui.theme.ClickAndRaceTheme
 import com.google.firebase.Firebase
 import com.google.firebase.analytics.analytics
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : ComponentActivity() {
+    private lateinit var auth: FirebaseAuth  // Instancia de Firebase Auth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        // Inicializar Firebase Auth
+        auth = FirebaseAuth.getInstance()
+
+        // Iniciar sesión de prueba anónima
+        signInAnonymously()
+
         //Analitic event
         // Inicializar Firebase Analytics
         val analytics2 = Firebase.analytics
@@ -89,7 +101,20 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
+
+
+private fun signInAnonymously() {
+    auth.signInAnonymously()
+        .addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
+                val user: FirebaseUser? = auth.currentUser
+                Log.d("FirebaseAuth", "Autenticado como: ${user?.uid}")
+            } else {
+                Log.e("FirebaseAuth", "Error al autenticar", task.exception)
+            }
+        }
+}
+}
 
 
 //@Composable
