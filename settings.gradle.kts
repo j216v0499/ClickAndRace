@@ -16,11 +16,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        gradlePluginPortal()
-
     }
 }
 
-rootProject.name = "ClickAndRace"
+rootProject.name = "auth"
 include(":app")
- 
