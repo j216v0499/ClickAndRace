@@ -1,19 +1,21 @@
+
+
 plugins {
 
     // Add the Google services Gradle plugin
-    id("com.google.gms.google-services")
+    //id("com.google.gms.google-services")
 
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
 
-
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.23"
 
 
 }
 
 android {
-    namespace = "com.example.clickandrace"
+    namespace = "com.dearos.clickandrace"
     compileSdk = 35
 
     defaultConfig {
@@ -57,17 +59,8 @@ android {
         }
     }
 }
-
 dependencies {
 
-    // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:33.11.0"))
-
-    // When using the BoM, don't specify versions in Firebase dependencies
-    implementation(libs.firebase.analytics)
-
-
-    
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -78,8 +71,6 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.lombok)
-    implementation(libs.firebase.database)
-    implementation(libs.firebase.auth)
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
@@ -90,4 +81,44 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Googel
+
+
+// MARK: Google
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    //SUPABASE
+
+ //   implementation(platform("io.github.jan-tennert.supabase:bom:1.2.3")) // Ensure this is the correct version
+
+    // Autenticación + Postgrest
+   // implementation("io.github.jan-tennert.supabase:auth-kt")
+  //  implementation("io.github.jan-tennert.supabase:postgrest-kt")
+
+    // Ktor client
+    implementation("io.ktor:ktor-client-android:2.3.7")
+
+    // Kotlin Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+
+// MARK: Supabase
+    //implementation(platform(libs.supabase.bom) )|
+    //implementation(libs.auth.kt)
+
+  //  implementation(libs.ktor.client.okhttp)
+
+    implementation(libs.androidx.credentials)
+
+    // optional - needed for credentials support from play services, for devices running
+    // Android 13 and below.
+    implementation(libs.androidx.credentials.play.services.auth)
+
+
+    implementation ("androidx.credentials:credentials:1.5.0")
+    implementation ("androidx.credentials:credentials-play-services-auth:1.5.0")
+    implementation ("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+
+
 }

@@ -1,4 +1,4 @@
-package com.example.clickandrace.ui.theme
+package com.dearos.clickandrace.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

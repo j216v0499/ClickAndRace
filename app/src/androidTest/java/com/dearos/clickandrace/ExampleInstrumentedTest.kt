@@ -1,4 +1,4 @@
-package com.example.clickandrace
+package com.dearos.clickandrace
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

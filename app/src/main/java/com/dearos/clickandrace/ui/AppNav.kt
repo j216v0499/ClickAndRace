@@ -1,13 +1,7 @@
-package com.example.clickandrace.ui
+package com.dearos.clickandrace.ui
 
-import android.content.SharedPreferences
-import android.widget.Toast
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavHost
-import androidx.navigation.NavHostController
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
 
 @Composable
 fun AppNav(

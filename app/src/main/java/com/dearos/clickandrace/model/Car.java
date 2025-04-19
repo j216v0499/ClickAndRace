@@ -1,4 +1,4 @@
-package com.example.clickandrace.model;
+package com.dearos.clickandrace.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
