@@ -25,8 +25,9 @@ android {
         }
 
         //TO DO -> Cambiar las keys
+        buildConfigField( "String", "BASE_TAG_LOGGER", "\"ClickAndRace-Logger\"")
 
-        buildConfigField("String", "SUPABASE_URL", "\"${project.findProperty("SUPABASE_URL")}\"")
+        buildConfigField( "String", "SUPABASE_URL", "\"${project.findProperty("SUPABASE_URL")}\"")
         buildConfigField( "String", "SUPABASE_ANON_KEY", "\"${project.findProperty("SUPABASE_ANON_KEY")}\"")
         buildConfigField( "String", "WEB_CLIENT_ID", "\"${project.findProperty("WEB_CLIENT_ID")}\"")
 
