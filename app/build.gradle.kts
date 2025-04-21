@@ -1,16 +1,10 @@
 
-
 plugins {
-
-    // Add the Google services Gradle plugin
-    //id("com.google.gms.google-services")
 
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
-
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.23"
-
+    alias(libs.plugins.kotlin.serialization)
 
 }
 
@@ -29,6 +23,13 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        //TO DO -> Cambiar las keys
+
+        buildConfigField("String", "SUPABASE_URL", "\"${project.findProperty("SUPABASE_URL")}\"")
+        buildConfigField( "String", "SUPABASE_ANON_KEY", "\"${project.findProperty("SUPABASE_ANON_KEY")}\"")
+        buildConfigField( "String", "WEB_CLIENT_ID", "\"${project.findProperty("WEB_CLIENT_ID")}\"")
+
     }
 
     buildTypes {
@@ -49,6 +50,10 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
+            // Se habilitar BuildConfig para poder tener las keys en el gradle.properties
+            //para que estén juntas y disponibles en el código
+
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -68,7 +73,7 @@ dependencies {
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
 
-    // Used for OTP feature
+    // Used for one time password feature
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
