@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "auth"
+rootProject.name = "ClickAndRace"
 include(":app")
