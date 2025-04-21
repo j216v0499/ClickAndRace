@@ -24,8 +24,7 @@ koinCore = "4.0.2"
 koinAndroidxCompose = "4.0.2"
 
 #Loompok
-lombok = "1.18.30"
-
+lombok = "1.18.36"
 
 [libraries]
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
