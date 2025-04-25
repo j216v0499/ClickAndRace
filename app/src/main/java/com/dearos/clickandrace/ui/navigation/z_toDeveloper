@@ -1,0 +1,3 @@
+cambiar rutas o añadir pantallas  fun AppNav() {
+
+                                             NavHost(
