@@ -1,8 +1,9 @@
 package com.dearos.clickandrace
 
 import android.app.Application
-import com.dearos.clickandrace.di.viewModelModule
-import com.dearos.clickandrace.di.appModule
+//TODO
+//import com.dearos.clickandrace.di.viewModelModule
+//import com.dearos.clickandrace.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.android.ext.koin.androidLogger
@@ -52,7 +53,7 @@ class App : Application() {
              *          Define las dependencias para los ViewModels.
              */
 
-            modules(appModule, viewModelModule)
+         //   modules(appModule, viewModelModule)
         }
     }
 }

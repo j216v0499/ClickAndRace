@@ -29,6 +29,9 @@ android {
 
         buildConfigField( "String", "SUPABASE_URL", "\"${project.findProperty("SUPABASE_URL")}\"")
         buildConfigField( "String", "SUPABASE_ANON_KEY", "\"${project.findProperty("SUPABASE_ANON_KEY")}\"")
+
+        /* WEB_CLIENT_ID desde Google Console */
+
         buildConfigField( "String", "WEB_CLIENT_ID", "\"${project.findProperty("WEB_CLIENT_ID")}\"")
 
     }
@@ -106,6 +109,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.lombok)
+    implementation(libs.places)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
