@@ -1,0 +1,25 @@
+<resources>
+
+    <!--    Loggin Scren  Text for user experience -->
+    <string name="app_name">ClickAndRace</string>
+    <string name="login">Inicia sessió</string>
+    <string name="email_address">Adreça electrònica</string>
+    <string name="password">Contrasenya</string>
+    <string name="forgot_password">Has oblidat la contrasenya?</string>
+    <string name="login_button">Inicia sessió</string>
+    <string name="signup_question">No tens un compte?</string>
+    <string name="signup_action">Registra\'t</string>
+    <string name="google_login">Continua amb Google</string>
+    <string name="login_success">Sessió iniciada correctament</string>
+    <string name="email_not_verified">Correu no verificat. S\'ha enviat un OTP.</string>
+    <string name="login_error">Error: %1$s</string>
+    <string name="welcome">Benvingut de nou, default!</string>
+    <string name="intro_message">Inicia sessió per començar</string>
+    <string name="signin_with">O inicia sessió amb</string>
+
+    <!--  Login Screen Toasr o Error msg  -->
+    <string name="toast_login_success">Sessió iniciada correctament</string>
+    <string name="toast_email_not_verified">Correu no verificat. S\'ha enviat un OTP.</string>
+    <string name="toast_login_error">Error: %1$s</string>
+
+</resources>

@@ -1,3 +1,26 @@
 <resources>
+
+<!--    Loggin Scren  Text for user experience -->
     <string name="app_name">ClickAndRace</string>
+    <string name="login">Login</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_button">Login</string>
+    <string name="signup_question">Don’t have an account?</string>
+    <string name="signup_action">Sign up</string>
+    <string name="google_login">Continue with Google</string>
+    <string name="login_success">Login successful</string>
+    <string name="email_not_verified">Email not verified. OTP sent.</string>
+    <string name="login_error">Error: %1$s</string>
+    <string name="welcome">Welcome back default!</string>
+    <string name="intro_message">Sign in to start </string>
+    <string name="signin_with">Or sign in with</string>
+
+    <!--  Login Screen Toasr o Error msg  -->
+
+    <string name="toast_login_success">Login successful</string>">
+    <string name="toast_email_not_verified">Email not verified. OTP sent.</string>
+    <string name="toast_login_error">Error: %1$s</string>
+
 </resources>
