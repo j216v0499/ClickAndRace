@@ -1,9 +1,11 @@
 package com.dearos.clickandrace.ui.navigation
-/*
-class AuthNav {
-}
 
-*/
+//import com.dearos.auth.homePage.HomeScreen
+//import com.dearos.ui.auth.presentation.forgetPassword.reset.ForgetPasswordScreen
+//import com.dearos.ui.auth.presentation.forgetPassword.setNew.SetPasswordScreen
+//import com.dearos.ui.auth.presentation.login.LoginScreen
+//import com.dearos.ui.auth.presentation.otpVerification.OtpVerificationScreen
+//import com.dearos.ui.auth.presentation.signUp.SignUpScreen
 
 
 import androidx.compose.runtime.Composable
@@ -12,12 +14,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-//import com.dearos.auth.homePage.HomeScreen
-//import com.dearos.ui.auth.presentation.forgetPassword.reset.ForgetPasswordScreen
-//import com.dearos.ui.auth.presentation.forgetPassword.setNew.SetPasswordScreen
-//import com.dearos.ui.auth.presentation.login.LoginScreen
-//import com.dearos.ui.auth.presentation.otpVerification.OtpVerificationScreen
-//import com.dearos.ui.auth.presentation.signUp.SignUpScreen
+import com.dearos.clickandrace.ui.screens.appScreens.homePageAuthTest.HomeScreen
+import com.dearos.clickandrace.ui.screens.authScreens.login.LoginScreen
 
 /**
  * Función de navegación principal que configura las pantallas y transiciones
@@ -26,9 +24,13 @@ import androidx.navigation.navArgument
  *
  * @param startDestination La ruta de la pantalla inicial a la que navegar.
  */
+
+
+
 @Composable
 fun AuthNav(
-    startDestination: String
+    startDestination: String,
+    onLoginSuccess: () -> Unit
 ) {
     // Controlador de navegación para manejar el flujo entre pantallas
     val navController = rememberNavController()
@@ -53,6 +55,8 @@ fun AuthNav(
                     navController.navigate(AuthScreen.HomeScreen.route) {
                         popUpTo(AuthScreen.Login.route) { inclusive = true }
                     }
+                     onLoginSuccess()  // Aquí
+
                 },
                 navigateToOtp = { email ->
                     // Navegar a la pantalla de verificación OTP
@@ -70,13 +74,13 @@ fun AuthNav(
             popExitTransition = { transicionPopDeSalida() }
         ) {
             // Pantalla de Sign-Up con rutas de navegación relacionadas
-            SignUpScreen(
-                navigateToLogin = { navController.navigate(AuthScreen.Login.route) },
-                navigateToOtp = { email ->
-                    // Navegar a la pantalla de verificación OTP desde el SignUp
-                    navController.navigate("${AuthScreen.OtpVerification.route}/$email/signup")
-                }
-            )
+//            SignUpScreen(
+//                navigateToLogin = { navController.navigate(AuthScreen.Login.route) },
+//                navigateToOtp = { email ->
+//                    // Navegar a la pantalla de verificación OTP desde el SignUp
+//                    navController.navigate("${AuthScreen.OtpVerification.route}/$email/signup")
+//                }
+//            )
         }
 
         // Pantalla de OTP (verificación)
@@ -96,33 +100,33 @@ fun AuthNav(
             val flow = backStackEntry.arguments?.getString("flow") ?: "signup"
 
             // Pantalla de verificación OTP con lógica de navegación posterior a la verificación
-            OtpVerificationScreen(
-                email = email,
-                flow = flow,
-                navigateAfterOtp = {
-                    when (flow) {
-                        "login" -> {
-                            // Después de la verificación OTP para Login, navegar a Home
-                            navController.navigate(AuthScreen.HomeScreen.route) {
-                                popUpTo(AuthScreen.Login.route) { inclusive = true }
-                            }
-                        }
-                        "reset" -> {
-                            // Después de la verificación OTP para Reset, navegar a SetPassword
-                            navController.navigate(AuthScreen.SetNewPassword.route) {
-                                popUpTo(AuthScreen.ResetPassword.route) { inclusive = true }
-                            }
-                        }
-                        else -> {
-                            // Después de la verificación OTP para SignUp, navegar a Login
-                            navController.navigate(AuthScreen.Login.route) {
-                                popUpTo(AuthScreen.Login.route) { inclusive = true }
-                            }
-                        }
-                    }
-                },
-                onBackPressed  = { navController.popBackStack() }
-            )
+//            OtpVerificationScreen(
+//                email = email,
+//                flow = flow,
+//                navigateAfterOtp = {
+//                    when (flow) {
+//                        "login" -> {
+//                            // Después de la verificación OTP para Login, navegar a Home
+//                            navController.navigate(AuthScreen.HomeScreen.route) {
+//                                popUpTo(AuthScreen.Login.route) { inclusive = true }
+//                            }
+//                        }
+//                        "reset" -> {
+//                            // Después de la verificación OTP para Reset, navegar a SetPassword
+//                            navController.navigate(AuthScreen.SetNewPassword.route) {
+//                                popUpTo(AuthScreen.ResetPassword.route) { inclusive = true }
+//                            }
+//                        }
+//                        else -> {
+//                            // Después de la verificación OTP para SignUp, navegar a Login
+//                            navController.navigate(AuthScreen.Login.route) {
+//                                popUpTo(AuthScreen.Login.route) { inclusive = true }
+//                            }
+//                        }
+//                    }
+//                },
+//                onBackPressed  = { navController.popBackStack() }
+//            )
         }
 
         // Pantalla de Restablecimiento de Contraseña
@@ -134,13 +138,13 @@ fun AuthNav(
             popExitTransition = { transicionPopDeSalida() }
         ) {
             // Pantalla de olvido de contraseña
-            ForgetPasswordScreen(
-                navigateToLogin = { navController.navigate(AuthScreen.Login.route) },
-                navigateToOtp = { email ->
-                    // Navegar a la pantalla de OTP desde el flujo de restablecimiento
-                    navController.navigate("${AuthScreen.OtpVerification.route}/$email/reset")
-                }
-            )
+//            ForgetPasswordScreen(
+//                navigateToLogin = { navController.navigate(AuthScreen.Login.route) },
+//                navigateToOtp = { email ->
+//                    // Navegar a la pantalla de OTP desde el flujo de restablecimiento
+//                    navController.navigate("${AuthScreen.OtpVerification.route}/$email/reset")
+//                }
+//            )
         }
 
         // Pantalla de establecer nueva contraseña
@@ -152,14 +156,14 @@ fun AuthNav(
             popExitTransition = { transicionPopDeSalida() }
         ){
             // Pantalla de establecer nueva contraseña con navegación a login o restablecer contraseña
-            SetPasswordScreen(
-                navigateToLogin = {
-                    navController.navigate(AuthScreen.Login.route) {
-                        popUpTo(0) // Limpiar el backstack
-                    }
-                },
-                navigateToReset = { navController.navigate(AuthScreen.ResetPassword.route) }
-            )
+//            SetPasswordScreen(
+//                navigateToLogin = {
+//                    navController.navigate(AuthScreen.Login.route) {
+//                        popUpTo(0) // Limpiar el backstack
+//                    }
+//                },
+//                navigateToReset = { navController.navigate(AuthScreen.ResetPassword.route) }
+//            )
         }
 
         // Pantalla de inicio (Home)
@@ -176,7 +180,8 @@ fun AuthNav(
                     navController.navigate(AuthScreen.Login.route) {
                         popUpTo(0) // Limpiar el backstack si es necesario
                     }
-                }
+                },
+                onLogout = {}
             )
         }
     }
