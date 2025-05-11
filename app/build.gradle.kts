@@ -56,7 +56,7 @@ android {
         compose = true
         buildConfig = true
             // Se habilitar BuildConfig para poder tener las keys en el gradle.properties
-            //para que estén juntas y disponibles en el código
+            // para que estén juntas y disponibles en el código
 
     }
     composeOptions {
@@ -70,6 +70,19 @@ android {
 }
 dependencies {
 
+
+    // Google Maps y ubicación
+
+    implementation(libs.google.maps)
+    implementation(libs.google.location)
+
+    // Places Autocomplete
+    implementation(libs.google.places)
+
+    // Retrofit (opcional si accedes a Places Web API)
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+
     implementation(libs.androidx.navigation.compose)
 
     //Sign-In with Google
@@ -80,6 +93,9 @@ dependencies {
     // Used for one time password feature
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //Material 2
+    implementation("com.google.android.material:material:1.11.0")
 
     //Material 3
     implementation(libs.androidx.material.icons.extended)
@@ -99,7 +115,6 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.androidx.compose)
 
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -109,7 +124,6 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.lombok)
-    implementation(libs.places)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

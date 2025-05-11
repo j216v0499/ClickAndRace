@@ -25,7 +25,20 @@ koinAndroidxCompose = "4.0.2"
 
 #Loompok
 lombok = "1.18.36"
-places = "4.2.0"
+
+#supabase
+supabase = "2.22.12" # O la más reciente disponible
+
+
+#Pantalla mapas
+maps = "18.1.0"
+location = "21.0.1"
+places = "3.4.0"
+retrofit = "2.9.0"
+gson = "2.9.0"
+
+
+#places = "4.2.0"
 
 [libraries]
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
@@ -37,9 +50,7 @@ androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 bom = { module = "io.github.jan-tennert.supabase:bom", version.ref = "bom" }
-postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt" }
-realtime-kt = { module = "io.github.jan-tennert.supabase:realtime-kt" }
-auth-kt = { module = "io.github.jan-tennert.supabase:auth-kt" }
+
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientAndroid" }
 
 #Koin
@@ -62,7 +73,22 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "places" }
+
+postgrest-kt = { module = "io.github.jan-tennert.supabase:postgrest-kt", version.ref = "supabase" }
+auth-kt = { module = "io.github.jan-tennert.supabase:auth-kt", version.ref = "supabase" }
+realtime-kt = { module = "io.github.jan-tennert.supabase:realtime-kt", version.ref = "supabase" }
+
+
+
+google-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "maps" }
+google-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "location" }
+google-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "places" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gson" }
+
+#postgrest-dsl-kt = { module = "io.github.jan-tennert.supabase:postgrest-dsl-kt", version.ref = "supabase" }
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
