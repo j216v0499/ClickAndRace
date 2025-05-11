@@ -1,4 +1,4 @@
-package com.dearos.clickandrace.auth.domain.repository
+package com.dearos.clickandrace.auth.domain.authRepository
 
 import android.app.Activity
 import android.content.Context
@@ -20,18 +20,16 @@ import java.util.UUID
 
                                     //build.gradle.kts :app
 private const val WEB_CLIENT_ID =   BuildConfig.WEB_CLIENT_ID
-
-
 /**
- * Encargado de gestionar la autenticación del usuario con
- * Supabase, inicio de sesión con email, Google y fin  de sesión
+ * Encargado de gestionar la autenticación del usuarios con
+ * Supabase, inicio de sesión con email, Google y fin de sesión
  *
  * @property context Contexto de la aplicación o actividad
  * @property supabaseClient Cliente de Supabase ya configurado
  */
 class LoginRepo(
     private val context: Context,
-    private val supabaseClient: SupabaseClient
+    val supabaseClient: SupabaseClient
 ) {
     //El suspend se encarga de que la función no bloquee el hilo principal
     suspend fun loginUser(email: String, password: String): Result<Unit> {

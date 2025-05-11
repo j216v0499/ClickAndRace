@@ -1,4 +1,4 @@
-package com.dearos.clickandrace.auth.domain.repository
+package com.dearos.clickandrace.auth.domain.authRepository
 
 import com.dearos.clickandrace.LogsLogger
 import io.github.jan.supabase.SupabaseClient
@@ -63,17 +63,13 @@ class ResetPasswordRepo(
      * @return Resultado exitoso o con error.
      */
     suspend fun sendOTP(email: String): Result<Unit> {
-        return withContext(Dispatchers.IO) {
-            try {
-                // Envía la solicitud de reset de contraseña por email a través de Supabase Auth
-                supabaseClient.auth.resetPasswordForEmail(email = email)
-                return@withContext Result.success(Unit)
-
-            } catch (e: Exception) {
-                LogsLogger.e("ResetPasswordRepository", "Error sending OTP: ${e.message}")
-                return@withContext Result.failure(e)
-            }
+        return try {
+            supabaseClient.auth.resetPasswordForEmail(email)
+            Result.success(Unit)
+        } catch (e: Exception) {
+            Result.failure(e)
         }
     }
+
 }
 

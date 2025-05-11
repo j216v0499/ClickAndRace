@@ -1,4 +1,4 @@
-package com.dearos.clickandrace.auth.domain.repository
+package com.dearos.clickandrace.auth.domain.authRepository
 
 import com.dearos.clickandrace.LogsLogger
 import io.github.jan.supabase.SupabaseClient
@@ -20,7 +20,7 @@ import kotlinx.serialization.json.put
  *
  * @param supabaseClient Cliente de Supabase para ejecutar operaciones de autenticación y base de datos.
  */
-class SignUpRepository(
+class SignUpRepo(
     private val supabaseClient: SupabaseClient
 ) {
 

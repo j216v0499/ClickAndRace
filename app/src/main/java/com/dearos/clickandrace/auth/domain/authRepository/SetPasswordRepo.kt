@@ -1,4 +1,4 @@
-package com.dearos.clickandrace.auth.domain.repository
+package com.dearos.clickandrace.auth.domain.authRepository
 
 import com.dearos.clickandrace.LogsLogger
 import io.github.jan.supabase.SupabaseClient
