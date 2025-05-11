@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Fondo azul -->
+    <path
+        android:fillColor="#012169"
+        android:pathData="M0,0h24v24H0V0z"/>
+    <!-- Cruz blanca (St. Andrew) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,10h-9.4V0h-4.2v10H0v4.2h10V24h4.2v-9.8H24V10z"/>
+    <!-- Cruz roja (St. George) -->
+    <path
+        android:fillColor="#C8102E"
+        android:pathData="M14.4,0h-4.8v9.6H0v4.8h9.6V24h4.8v-9.6H24v-4.8h-9.6V0z"/>
+    <!-- Cruz diagonal blanca (St. Patrick) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16.8,0l-4.8,4.8L7.2,0L0,7.2l4.8,4.8L0,16.8L7.2,24l4.8-4.8l4.8,4.8l7.2-7.2l-4.8-4.8l4.8-4.8L16.8,0z"/>
+    <!-- Cruz diagonal roja (St. Patrick) -->
+    <path
+        android:fillColor="#C8102E"
+        android:pathData="M15.6,1.2L12,4.8L8.4,1.2L1.2,8.4l3.6,3.6l-3.6,3.6l7.2,7.2l3.6-3.6l3.6,3.6l7.2-7.2l-3.6-3.6l3.6-3.6L15.6,1.2z"/>
+</vector>

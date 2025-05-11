@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Franja roja superior -->
+    <path
+        android:fillColor="#C60B1E"
+        android:pathData="M0,0h24v6H0V0z"/>
+    <!-- Franja amarilla central -->
+    <path
+        android:fillColor="#FFC400"
+        android:pathData="M0,6h24v12H0V6z"/>
+    <!-- Franja roja inferior -->
+    <path
+        android:fillColor="#C60B1E"
+        android:pathData="M0,18h24v6H0V18z"/>
+    <!-- Escudo (versión simplificada) -->
+    <path
+        android:fillColor="#C60B1E"
+        android:pathData="M10,12h4v2h-4V12z"/>
+    <path
+        android:fillColor="#FFC400"
+        android:pathData="M9,10h6v4H9V10z"/>
+</vector>
