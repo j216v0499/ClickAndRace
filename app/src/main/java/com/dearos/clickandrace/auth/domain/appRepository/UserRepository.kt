@@ -1,111 +1,96 @@
 package com.dearos.clickandrace.auth.domain.appRepository
 
-import com.dearos.clickandrace.data.model.User
+import android.content.Context
+import android.net.Uri
+import com.dearos.clickandrace.auth.domain.supabase.SupabaseClientProvider
+import com.dearos.clickandrace.model.dto.UserDTO
+import com.dearos.clickandrace.model.data.UserData
 import io.github.jan.supabase.SupabaseClient
+import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.postgrest.from
+import io.github.jan.supabase.storage.storage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.util.UUID
 
+/**
+ * Repositorio encargado de gestionar las operaciones CRUD relacionadas con los usuarios (users)
+ * en la base de datos Supabase.
+ *
+ * Proporciona métodos para obtener y actualizar datos del usuario, obtener el ID del usuario actual
+ * y cargar imágenes de perfil en Supabase Storage.
+ *
+ * @param supabaseClient Cliente de Supabase configurado para interactuar con la base de datos y almacenamiento.
+ */
 class UserRepository(private val supabaseClient: SupabaseClient) {
 
-    /** 1. Create */
-    suspend fun createUser(user: User): Result<User> = withContext(Dispatchers.IO) {
-        runCatching {
-            val inserted: Map<String, Any> = supabaseClient
-                .from("users")
-                .insert(
-                    mapOf(
-                        "name"            to user.name,
-                        "email"           to user.email,
-                        "phone"           to user.phone,
-                        "rating"          to user.rating,
-                        "profile_picture" to user.profilePicture,
-                        "default_location"     to user.defaultLocation,
-                        "default_availability" to user.defaultAvailability
+    /**
+     * Obtiene los datos de un usuario específico a partir de su ID.
+     *
+     * @param id ID del usuario cuyo dato se desea obtener.
+     * @return Un objeto [UserData] con la información del usuario o `null` si no se encuentra el usuario.
+     */
+    suspend fun getUserData(id: String): UserData? {
+        return supabaseClient.from("users")
+            .select {
+                filter { eq("id", id) }
+            }
+            .decodeSingleOrNull()
+    }
+
+    /**
+     * Actualiza la información de un usuario.
+     *
+     * @param id ID del usuario a actualizar.
+     * @param user Objeto [UserDTO] que contiene los nuevos datos del usuario.
+     */
+    suspend fun updateUser(id: String, user: UserDTO) {
+        supabaseClient.from("users")
+            .update(user) {
+                filter { eq("id", id) }
+            }
+    }
+
+    /**
+     * Obtiene el ID del usuario actual autenticado.
+     *
+     * @return El ID del usuario actual o `null` si no hay usuario autenticado.
+     */
+    fun getCurrentUserId(): String? {
+        return supabaseClient.auth.currentUserOrNull()?.id
+    }
+
+    /**
+     * Subir una imagen de perfil a Supabase Storage.
+     *
+     * @param uri Uri de la imagen que se desea cargar.
+     * @param context El contexto de la aplicación necesario para acceder al contenido de la URI.
+     * @return La URL pública de la imagen subida o `null` si ocurrió un error.
+     */
+    suspend fun uploadImageToSupabase(uri: Uri, context: Context): String? {
+        return withContext(Dispatchers.IO) {
+            try {
+                val inputStream = context.contentResolver.openInputStream(uri)
+                val bytes = inputStream?.readBytes() ?: return@withContext null
+                val fileName = "profile_pictures/${UUID.randomUUID()}.jpg"
+
+                SupabaseClientProvider.client.storage
+                    .from("avatars")
+                    .upload(
+                        path = fileName,
+                        data = bytes,
+                        options = {
+                            upsert = true
+                        }
                     )
-                )
-                .decodeSingle()
-            inserted.toUser()
+
+                // Si el bucket es público, retornamos la URL pública
+                "https://pxfipabwlotvlxxliwfj.supabase.co/storage/v1/object/public/avatars/$fileName"
+
+            } catch (e: Exception) {
+                e.printStackTrace()
+                null
+            }
         }
     }
-
-    /** 2. Read by ID */
-    suspend fun getUserById(id: String): Result<User> = withContext(Dispatchers.IO) {
-        runCatching {
-            val row: Map<String, Any> = supabaseClient
-                .from("users")
-                .select {
-                    filter { eq("id", id) }
-                }
-                .decodeSingle()
-            row.toUser()
-        }
-    }
-
-    /** 2b. Read all (optionally paginate/filter outside) */
-    suspend fun getAllUsers(): Result<List<User>> = withContext(Dispatchers.IO) {
-        runCatching {
-            val rows: List<Map<String, Any>> = supabaseClient
-                .from("users")
-                .select { /* no filter = all */ }
-                .decodeList()
-            rows.map { it.toUser() }
-        }
-    }
-
-    /** 3. Update */
-    suspend fun updateUser(id: String, updates: Map<String, Any>): Result<User> = withContext(Dispatchers.IO) {
-        runCatching {
-            val updated: Map<String, Any> = supabaseClient
-                .from("users")
-                .update(updates) {
-                    filter { eq("id", id) }
-                }
-                .decodeSingle()
-            updated.toUser()
-        }
-    }
-
-    /** 4. Delete */
-    suspend fun deleteUser(id: String): Result<Unit> = withContext(Dispatchers.IO) {
-        runCatching {
-            val deleted: List<Map<String, Any>> = supabaseClient
-                .from("users")
-                .delete {
-                    filter { eq("id", id) }
-                }
-                .decodeList()
-            if (deleted.isEmpty()) throw Exception("Usuario no encontrado o ya eliminado")
-            Unit
-        }
-    }
-    /** Crea un usuario en la tabla "users" usando los datos de la sesión de autenticación */
-    suspend fun createUserFromAuth(userId: String, email: String, name: String?): Result<User> {
-        return createUser(
-            User(
-                id = userId,
-                name = name ?: "Usuario sin nombre", // Asigna un nombre predeterminado si falta
-                email = email,
-                phone = null, // Puedes omitir o asignar valores por defecto
-                rating = 0f,
-                profilePicture = null,
-                defaultLocation = null,
-                defaultAvailability = emptyMap(),
-                createdAt = null
-            )
-        )
-    }
-
-    /** Mapea un registro JSON a tu modelo User */
-    private fun Map<String, Any?>.toUser(): User = User(
-        id                  = this["id"] as String,
-        name                = this["name"] as String,
-        email               = this["email"] as String,
-        phone               = this["phone"] as? String,
-        rating              = (this["rating"] as? Number)?.toFloat() ?: 0f,
-        profilePicture      = this["profile_picture"] as? String,
-        defaultLocation     = this["default_location"] as? String,
-        defaultAvailability = this["default_availability"] as? Map<String, Any>,
-        createdAt           = this["created_at"] as? String
-    )
 }
