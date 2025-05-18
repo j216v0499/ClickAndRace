@@ -65,7 +65,6 @@ class SignUpRepo(
      * @return Resultado de la verificación.
      */
     //El suspend se encarga de que la función no bloquee el hilo principal
-
     suspend fun verifyEmail(email: String, token: String): Result<Unit> {
         return withContext(Dispatchers.IO) {
             try {
@@ -104,7 +103,6 @@ class SignUpRepo(
                     .decodeList<Map<String, String>>() // Decodifica a lista de emails
                 result.isNotEmpty()
             } catch (e: Exception) {
-                //Todo
                 LogsLogger.e("SignUpRepository", "Error checking email in public.users: ${e.message}")
                 false
             }
