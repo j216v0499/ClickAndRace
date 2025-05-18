@@ -1,4 +1,4 @@
-package com.dearos.clickandrace.ui.screens.appScreens.homePageAuthTest
+package com.dearos.clickandrace.ui.screens.appScreens.homeScreen
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -28,30 +28,38 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dearos.clickandrace.R
-import com.dearos.clickandrace.ui.components.LanguageSelector
+import com.dearos.clickandrace.ui.componentsUI.LanguageSelector
 import com.dearos.clickandrace.util.LanguageLocaleHelper
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 
+/**
+ * Pantalla principal del usuario autenticado.
+ *
+ * Esta pantalla muestra un mensaje de bienvenida, los tokens actuales (por motivos de debug),
+ * un selector de idioma, y un botón para cerrar sesión. También gestiona estados de carga y error.
+ *
+ * @param navigateToLogin Función de navegación que puede usarse para redirigir al usuario a la pantalla de login.
+ * @param onLogout Callback que se ejecuta después de un logout exitoso.
+ * @param homeViewModel ViewModel de la pantalla, inyectado por Koin. Contiene el estado de UI y lógica de logout.
+ */
 @Composable
 fun HomeScreen(
     navigateToLogin: () -> Unit,
     onLogout : () -> Unit,
-
     homeViewModel: HomeViewModel = koinViewModel()
 ) {
     val uiState by homeViewModel.uiState.collectAsState()
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
 
-    // If there's an error message, show a Toast (or display it in the UI)
+    // Si hay un mensaje de error, se muestra mediante un Toast
     uiState.errorMessage?.let { error ->
         Toast.makeText(LocalContext.current, error, Toast.LENGTH_LONG).show()
     }
 
-    // Check if we're in a loading state
+    // Si está cargando, mostrar indicador centrado
     if (uiState.isLoading) {
-        // Show a centered loading indicator
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -61,9 +69,6 @@ fun HomeScreen(
             CircularProgressIndicator()
         }
     } else {
-
-
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -73,7 +78,7 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // Welcome Message
+            // Mensaje de bienvenida personalizado
             Text(
                 text = "${stringResource(id = R.string.welcome)} ${uiState.userName}! 🎉",
                 fontSize = 24.sp,
@@ -83,7 +88,7 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Visual Debug: Display the stored tokens
+            // Mostrar tokens guardados (debug visual)
             Text(
                 text = "Access Token: ${uiState.accessToken}",
                 style = MaterialTheme.typography.bodyMedium
@@ -96,24 +101,22 @@ fun HomeScreen(
 
             Spacer(modifier = Modifier.height(30.dp))
 
+            // Selector de idiomas
             LanguageSelector { langCode ->
                 LanguageLocaleHelper.setCurrentLanguage(context, langCode)
                 LanguageLocaleHelper.setLocale(context, langCode)
-
             }
 
             Spacer(modifier = Modifier.height(30.dp))
 
-            //Logout Button
+            // Botón de logout
             Button(
                 onClick = {
                     coroutineScope.launch {
                         homeViewModel.logout {
-
-                            onLogout() // <- solo llamas esto si el logout fue exitoso
-
-
-                           // navigateToLogin()
+                            onLogout() // Llamado solo si el logout fue exitoso
+                            // navigateToLogin()
+                            // comentado, por si se decide navegar manualmente
                         }
                     }
                 },
@@ -123,5 +126,4 @@ fun HomeScreen(
             }
         }
     }
-
 }
