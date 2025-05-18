@@ -5,6 +5,9 @@
     android:viewportHeight="1024">
 
 
+  <path
+      android:fillColor="#FFFFFF"
+      android:pathData="M0,0h1024v1024h-1024z" />
   <rect
       android:width="1024dp"
       android:height="1024dp"
