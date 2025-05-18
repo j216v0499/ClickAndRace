@@ -1,12 +1,11 @@
 package com.dearos.clickandrace
 
 import android.app.Application
-import com.dearos.clickandrace.di.viewModelModule
 import com.dearos.clickandrace.di.appModule
+import com.dearos.clickandrace.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
 import org.koin.android.ext.koin.androidLogger
-
+import org.koin.core.context.startKoin
 
 /**
  * La clase `App` es la clase principal de la aplicación, que extiende de `Application`.
