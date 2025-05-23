@@ -1,11 +1,10 @@
 <resources>
-
-    <!--    Loggin Scren  Text for user experience -->
+    <!--    Loggin Scren Text for user experience -->
     <string name="app_name">ClickAndRace</string>
     <string name="login">Entrar</string>
     <string name="email_address">Endereço de e-mail</string>
     <string name="password">Senha</string>
-    <string name="forgot_password">Esqueceu a senha?</string>
+    <string name="forgot_password">Esqueceu sua senha?</string>
     <string name="login_button">Entrar</string>
     <string name="signup_question">Não tem uma conta?</string>
     <string name="signup_action">Cadastre-se</string>
@@ -13,13 +12,218 @@
     <string name="login_success">Login bem-sucedido</string>
     <string name="email_not_verified">E-mail não verificado. OTP enviado.</string>
     <string name="login_error">Erro: %1$s</string>
-    <string name="welcome">Bem-vindo de volta, default!</string>
+    <string name="welcome">Bem-vindo de volta !</string>
     <string name="intro_message">Faça login para começar</string>
     <string name="signin_with">Ou entre com</string>
 
-    <!--  Login Screen Toasr o Error msg  -->
+    <!--  Login Screen Toast o Error msg  -->
     <string name="toast_login_success">Login bem-sucedido</string>
     <string name="toast_email_not_verified">E-mail não verificado. OTP enviado.</string>
     <string name="toast_login_error">Erro: %1$s</string>
+
+    <!--    All Products Screen-->
+    <string name="title_all_products">Todos os produtos</string>
+    <string name="action_search">Buscar</string>
+    <string name="hint_search_products">Buscar produtos…</string>
+    <string name="message_no_products_available">Não há produtos disponíveis no momento</string>
+
+    <!-- Product Card -->
+    <string name="content_desc_product_image">Imagem do produto</string>
+    <string name="text_price">Preço: %s</string>
+    <string name="text_type">Tipo: %s</string>
+    <string name="text_description_short">%s…</string>
+    <string name="text_no_description">Sem descrição</string>
+
+    <!--    ProductDetailsScreen-->
+    <string name="title_product_details">Detalhes do produto</string>
+    <string name="action_back">Voltar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Excluir</string>
+    <string name="message_edit_not_allowed">Você não pode editar este produto porque não é o criador dele.</string>
+    <string name="message_delete_not_allowed">Você não pode excluir este produto porque não é o criador dele.</string>
+    <string name="text_description_label">Descrição:</string>
+    <string name="content_desc_profile_picture">Foto de perfil</string>
+    <string name="action_send_email">Enviar e-mail</string>
+    <string name="action_call">Ligar</string>
+    <string name="text_email">E-mail: %s</string>
+    <string name="text_phone">Telefone: %s</string>
+    <string name="no_phone">Sem telefone</string>
+
+    <!-- Image Zoom Dialog -->
+    <string name="action_close">Fechar</string>
+    <string name="zoom_indicator">Zoom: %d%%</string>
+
+    <!-- Loading & Empty State -->
+    <string name="loading_product">Carregando produto…</string>
+
+    <!--    CreateEditProductScreen-->
+    <string name="title_create_product">Criar Produto</string>
+    <string name="title_edit_product">Editar Produto</string>
+    <string name="button_cancel">Cancelar</string>
+    <string name="button_delete_product">Excluir produto</string>
+    <string name="button_save_changes">Salvar alterações</string>
+    <string name="button_create_product">Criar produto</string>
+    <string name="button_select_image">Selecionar imagem (4:3)</string>
+    <string name="button_ok">OK</string>
+    <string name="button_confirm">Sim, excluir</string>
+    <string name="button_cancel_action">Cancelar</string>
+
+    <string name="label_title">Título</string>
+    <string name="label_description">Descrição</string>
+    <string name="label_price">Preço</string>
+    <string name="label_type">Tipo</string>
+    <string name="label_latitude">Latitude</string>
+    <string name="label_longitude">Longitude</string>
+    <string name="label_images">Imagens do produto</string>
+
+    <string name="error_title_required">O título não pode estar vazio</string>
+    <string name="error_description_required">A descrição não pode estar vazia</string>
+    <string name="error_type_required">O tipo não pode estar vazio</string>
+    <string name="error_at_least_one_image">Você precisa enviar pelo menos uma imagem.</string>
+    <string name="error_complete_required_fields">Preencha todos os campos obrigatórios.</string>
+
+    <string name="dialog_title_validation">Validação</string>
+    <string name="dialog_title_delete_product">Excluir produto?</string>
+    <string name="dialog_message_delete_product">Tem certeza de que deseja excluir este produto? Esta ação não pode ser desfeita.</string>
+
+    <string name="content_desc_existing_image">Imagem existente</string>
+    <string name="content_desc_new_image">Nova imagem</string>
+    <string name="content_desc_delete_image">Excluir imagem</string>
+
+    <string name="home_title">Início</string>
+    <string name="zona_title">Zona</string>
+    <string name="add_title">Adicionar</string>
+    <string name="mi_lista_title">Transações</string>
+    <string name="perfil_title">Perfil</string>
+
+    <!--work in progres screen -->
+    <string name="content_description_icon">Ícone do aplicativo</string>
+    <string name="work_in_progress_message">"Estamos trabalhando nisso "</string>
+    <string name="work_in_progress_detail">Esta seção estará disponível em breve. Obrigado pela paciência!</string>
+
+    <!--    AddLocationDialog-->
+    <string name="new_location">Novo local</string>
+    <string name="name">Nome</string>
+    <string name="select_type">Selecionar tipo</string>
+    <string name="other">Outro...</string>
+    <string name="enter_new_type">Digite o novo tipo</string>
+
+    <!--    DeleteLocationDialog-->
+    <string name="delete_location_title">Excluir local</string>
+    <string name="delete_location_confirmation">Tem certeza de que deseja excluir "%1$s"?</string>
+    <string name="edit_location">Editar local</string>
+
+    <!--    busqueda -->
+    <string name="search_location_label">Buscar local</string>
+    <string name="search_placeholder">Digite para buscar...</string>
+
+    <string name="register_title">Registre sua conta!</string>
+    <string name="register_subtitle">Cadastre-se para começar sua jornada no ClickAndRace</string>
+    <string name="full_name">Nome completo</string>
+    <string name="agree_to">"Eu concordo com os teminos - "</string>
+    <string name="sign_up">Cadastrar-se</string>
+    <string name="already_have_account">Já tem uma conta?</string>
+    <string name="sign_in">Entrar</string>
+
+    <string name="otp_sent_success">Código OTP enviado com sucesso</string>
+    <string name="reset_password_title">Redefina sua senha</string>
+    <string name="reset_password_subtitle">Por favor, insira seu e-mail e enviaremos um código OTP na próxima etapa para redefinir sua senha</string>
+    <string name="email_icon">Ícone de e-mail</string>
+    <string name="send_otp">Enviar código</string>
+    <string name="dialog_search_confirm">Centralizar no mapa</string>
+
+    <!-- Portugués (pt) -->
+    <string name="signup_error_email_exists">O email já existe.</string>
+    <string name="signup_error_unknown">Erro desconhecido</string>
+    <string name="signup_error_generic">Ocorreu um erro: %1$s</string>
+
+    <string name="validation_error_invalid_email">Por favor, insira um email válido</string>
+    <string name="validation_error_short_password">A senha deve ter pelo menos 6 caracteres</string>
+    <string name="validation_error_terms_not_accepted">Você deve aceitar os termos</string>
+    <string name="validation_error_invalid_name">Por favor, insira um nome válido</string>
+
+    <string name="otp_valid">OTP válido!</string>
+    <string name="otp_invalid">OTP inválido!</string>
+    <string name="otp_title">Verificação do Código OTP</string>
+    <string name="otp_subtitle">Por favor, verifique seu email %1$s para ver o código de verificação.</string>
+    <string name="otp_button_verify">Verificar</string>
+    <string name="otp_invalid_error">OTP inválido. Por favor, tente novamente.</string>
+
+    <string name="login_successful">Login bem-sucedido</string>
+
+    <string name="error_email_exists">O email já existe.</string>
+    <string name="error_unknown">Erro desconhecido</string>
+    <string name="error_generic">Ocorreu um erro: %1$s</string>
+    <string name="error_passwords_do_not_match">As senhas não coincidem</string>
+    <string name="error_generic_exception">Ocorreu um erro: %1$s</string>
+
+    <string name="set_new_password_title">Definir nova senha</string>
+    <string name="set_new_password_subtitle">Deve ter pelo menos 8 caracteres</string>
+    <string name="password_label">Senha</string>
+    <string name="confirm_password_label">Confirmar senha</string>
+    <string name="password_visibility_toggle">Alternar visibilidade da senha</string>
+    <string name="reset_password_button">Redefinir senha</string>
+    <string name="password_reset_successful">Senha redefinida com sucesso</string>
+
+
+    <!-- Portugués (pt) -->
+    <string name="create_product">Criar Produto</string>
+    <string name="edit_product">Editar Produto</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete_product">Eliminar produto</string>
+    <string name="title_required">Título *</string>
+    <string name="title_cannot_be_empty">O título não pode estar vazio</string>
+    <string name="description_required">Descrição *</string>
+    <string name="description_cannot_be_empty">A descrição não pode estar vazia</string>
+    <string name="price">Preço</string>
+    <string name="type_required">Tipo *</string>
+    <string name="type_cannot_be_empty">O tipo não pode estar vazio</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="product_images">Imagens do produto</string>
+    <string name="select_images">Selecionar imagens</string>
+    <string name="existing_image">Imagem existente</string>
+    <string name="new_image">Imagem nova</string>
+    <string name="delete_image">Eliminar imagem</string>
+    <string name="delete_new_image">Eliminar imagem nova</string>
+    <string name="fill_required_fields">Preencha todos os campos obrigatórios.</string>
+    <string name="at_least_one_image">Você deve enviar pelo menos uma imagem.</string>
+    <string name="save_changes">Salvar alterações</string>
+    <string name="validation">Validação</string>
+
+    <string name="profile_image_label">Imagem de perfil</string>
+    <string name="profile_image_content_description">Foto de perfil</string>
+    <string name="change_image_button">Alterar imagem</string>
+    <string name="name_label">Nome</string>
+    <string name="email_label">Email</string>
+    <string name="phone_label">Telefone</string>
+    <string name="save_changes_button">Guardar alterações</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="user_profile_title">Perfil do Utilizador</string>
+    <string name="logout_button">Sair</string>
+    <string name="logout_content_description">Terminar sessão</string>
+    <string name="user_name_label">Nome: %1$s</string>
+    <string name="user_email_label">Email: %1$s</string>
+    <string name="user_phone_label">Telefone: %1$s</string>
+    <string name="no_phone_text">Sem telefone</string>
+    <string name="received_reviews_title">Avaliações recebidas</string>
+    <string name="no_reviews_yet">Este utilizador ainda não tem avaliações.</string>
+    <string name="no_comment_text">Sem comentário</string>
+    <string name="edit_profile_button">Editar Perfil</string>
+    <!-- Títulos e etiquetas -->
+    <string name="rating_screen_title">Avaliar o vendedor</string>
+    <string name="comment_label">Comentário</string>
+    <string name="send_button">Enviar</string>
+    <string name="back_button_description">Voltar</string>
+
+    <!-- Mensagens e estados -->
+    <string name="loading">A carregar...</string>
+    <string name="empty_comment_error">Por favor, insira um comentário.</string>
+    <string name="rating_required_error">Por favor, selecione uma avaliação.</string>
+
+    <!-- Outros textos -->
+    <string name="rating_stars_description">Estrelas de avaliação</string>
+
+
 
 </resources>

@@ -16,7 +16,9 @@ private val DarkColorScheme = darkColorScheme(
     secondary = PurpleGrey80,
     tertiary = Pink80,
     background = ColorDark100,
-    onPrimary = ColorWhite200
+    onPrimary = ColorWhite200,
+    onTertiary = BotonesAzul,
+
 
     )
 
@@ -28,6 +30,7 @@ private val LightColorScheme = lightColorScheme(
     background = ColorWhite100,
     //Color texto negro
     onPrimary = ColorDark200,
+    onTertiary = BotonesAzul
 
     //Color
 

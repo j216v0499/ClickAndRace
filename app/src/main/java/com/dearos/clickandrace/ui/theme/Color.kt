@@ -19,3 +19,5 @@ val ColorDark200 = Color(0xFF000000)
 //oscuro
 val ColorDark100 = Color(0xFF000000)
 val ColorWhite200 = Color(0xFFFAFAFA)
+
+val BotonesAzul =Color(0xFF3A82F7)

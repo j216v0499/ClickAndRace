@@ -1,25 +1,233 @@
 <resources>
-
-    <!--    Loggin Scren  Text for user experience -->
+    <!--    Loggin Scren Text for user experience -->
     <string name="app_name">ClickAndRace</string>
-    <string name="login">Inicia sessió</string>
-    <string name="email_address">Adreça electrònica</string>
+    <string name="login">Iniciar sessió</string>
+    <string name="email_address">Correu electrònic</string>
     <string name="password">Contrasenya</string>
     <string name="forgot_password">Has oblidat la contrasenya?</string>
-    <string name="login_button">Inicia sessió</string>
+    <string name="login_button">Iniciar sessió</string>
     <string name="signup_question">No tens un compte?</string>
     <string name="signup_action">Registra\'t</string>
-    <string name="google_login">Continua amb Google</string>
-    <string name="login_success">Sessió iniciada correctament</string>
-    <string name="email_not_verified">Correu no verificat. S\'ha enviat un OTP.</string>
+    <string name="google_login">Continuar amb Google</string>
+    <string name="login_success">Inici de sessió correcte</string>
+    <string name="email_not_verified">Correu electrònic no verificat. OTP enviat.</string>
     <string name="login_error">Error: %1$s</string>
-    <string name="welcome">Benvingut de nou, default!</string>
+    <string name="welcome">Benvingut de nou!</string>
     <string name="intro_message">Inicia sessió per començar</string>
     <string name="signin_with">O inicia sessió amb</string>
 
-    <!--  Login Screen Toasr o Error msg  -->
-    <string name="toast_login_success">Sessió iniciada correctament</string>
-    <string name="toast_email_not_verified">Correu no verificat. S\'ha enviat un OTP.</string>
+    <!--  Login Screen Toast o Error msg  -->
+    <string name="toast_login_success">Inici de sessió correcte</string>
+    <string name="toast_email_not_verified">Correu electrònic no verificat. OTP enviat.</string>
     <string name="toast_login_error">Error: %1$s</string>
+
+    <!--    All Products Screen-->
+    <string name="title_all_products">Tots els productes</string>
+    <string name="action_search">Cercar</string>
+    <string name="hint_search_products">Cercar productes…</string>
+    <string name="message_no_products_available">No hi ha productes disponibles en aquest moment</string>
+
+    <!-- Product Card -->
+    <string name="content_desc_product_image">Imatge del producte</string>
+    <string name="text_price">Preu: %s</string>
+    <string name="text_type">Tipus: %s</string>
+    <string name="text_description_short">%s…</string>
+    <string name="text_no_description">Sense descripció</string>
+
+    <!--    ProductDetailsScreen-->
+    <string name="title_product_details">Detalls del producte</string>
+    <string name="action_back">Tornar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="message_edit_not_allowed">No pots editar aquest producte perquè no ets el seu creador.</string>
+    <string name="message_delete_not_allowed">No pots eliminar aquest producte perquè no ets el seu creador.</string>
+    <string name="text_description_label">Descripció:</string>
+    <string name="content_desc_profile_picture">Foto de perfil</string>
+    <string name="action_send_email">Enviar correu</string>
+    <string name="action_call">Trucar</string>
+    <string name="text_email">Correu: %s</string>
+    <string name="text_phone">Telèfon: %s</string>
+    <string name="no_phone">Sense telèfon</string>
+
+    <!-- Image Zoom Dialog -->
+    <string name="action_close">Tancar</string>
+    <string name="zoom_indicator">Zoom: %d%%</string>
+
+    <!-- Loading & Empty State -->
+    <string name="loading_product">Carregant producte…</string>
+
+    <!--    CreateEditProductScreen-->
+    <string name="title_create_product">Crear producte</string>
+    <string name="title_edit_product">Editar producte</string>
+    <string name="button_cancel">Cancel·lar</string>
+    <string name="button_delete_product">Eliminar producte</string>
+    <string name="button_save_changes">Desar els canvis</string>
+    <string name="button_create_product">Crear producte</string>
+    <string name="button_select_image">Seleccionar imatge (4:3)</string>
+    <string name="button_ok">D\'acord</string>
+    <string name="button_confirm">Sí, eliminar</string>
+    <string name="button_cancel_action">Cancel·lar</string>
+
+    <string name="label_title">Títol</string>
+    <string name="label_description">Descripció</string>
+    <string name="label_price">Preu</string>
+    <string name="label_type">Tipus</string>
+    <string name="label_latitude">Latitud</string>
+    <string name="label_longitude">Longitud</string>
+    <string name="label_images">Imatges del producte</string>
+
+    <string name="error_title_required">El títol no pot estar buit</string>
+    <string name="error_description_required">La descripció no pot estar buida</string>
+    <string name="error_type_required">El tipus no pot estar buit</string>
+    <string name="error_at_least_one_image">Has d\'ubicar almenys una imatge.</string>
+    <string name="error_complete_required_fields">Completa tots els camps obligatoris.</string>
+
+    <string name="dialog_title_validation">Validació</string>
+    <string name="dialog_title_delete_product">Eliminar producte?</string>
+    <string name="dialog_message_delete_product">Estàs segur que vols eliminar aquest producte? Aquesta acció no es pot desfer.</string>
+
+    <string name="content_desc_existing_image">Imatge existent</string>
+    <string name="content_desc_new_image">Nova imatge</string>
+    <string name="content_desc_delete_image">Eliminar imatge</string>
+
+    <string name="home_title">Inici</string>
+    <string name="zona_title">Zona</string>
+    <string name="add_title">Afegir</string>
+    <string name="mi_lista_title">Transaccions</string>
+    <string name="perfil_title">Perfil</string>
+
+    <!--work in progres screen -->
+    <string name="content_description_icon">Icona de l\'aplicació</string>
+    <string name="work_in_progress_message">"Estem treballant en això "</string>
+    <string name="work_in_progress_detail">Aquesta secció estarà disponible aviat. Gràcies per la teva paciència!</string>
+
+    <!--    AddLocationDialog-->
+    <string name="new_location">Nova ubicació</string>
+    <string name="name">Nom</string>
+    <string name="select_type">Seleccionar tipus</string>
+    <string name="other">Altres…</string>
+    <string name="enter_new_type">Escriu un nou tipus</string>
+
+    <!--    DeleteLocationDialog-->
+    <string name="delete_location_title">Eliminar ubicació</string>
+    <string name="delete_location_confirmation">Estàs segur que vols eliminar "%1$s"?</string>
+    <string name="edit_location">Editar ubicació</string>
+
+    <!--    busqueda -->
+    <string name="search_location_label">Cercar ubicació</string>
+    <string name="search_placeholder">Escriu per cercar…</string>
+
+    <string name="register_title">Registra el teu compte!</string>
+    <string name="register_subtitle">Inscriu-te per començar la teva aventura a ClickAndRace</string>
+    <string name="full_name">Nom complet</string>
+    <string name="agree_to">"Accepte les condicions de - "</string>
+    <string name="sign_up">Registrar-se</string>
+    <string name="already_have_account">Ja tens un compte?</string>
+    <string name="sign_in">Inicia sessió</string>
+
+    <string name="otp_sent_success">Codi OTP enviat correctament</string>
+    <string name="reset_password_title">Restableix la teva contrasenya</string>
+    <string name="reset_password_subtitle">Si us plau, introdueix el teu correu electrònic i t\'enviarem un codi OTP al següent pas per restablir la teva contrasenya</string>
+    <string name="email_icon">Icona de correu electrònic</string>
+    <string name="send_otp">Envia codi</string>
+
+    <string name="dialog_search_confirm">Centrar al mapa</string>
+    <!-- Catalán (ca) -->
+    <string name="signup_error_email_exists">El correu electrònic ja existeix.</string>
+    <string name="signup_error_unknown">Error desconegut</string>
+    <string name="signup_error_generic">Ha succeït un error: %1$s</string>
+
+    <string name="validation_error_invalid_email">Si us plau, introdueix un correu electrònic vàlid</string>
+    <string name="validation_error_short_password">La contrasenya ha de tenir almenys 6 caràcters</string>
+    <string name="validation_error_terms_not_accepted">Has d\'acceptar les condicions</string>
+    <string name="validation_error_invalid_name">Si us plau, introdueix un nom vàlid</string>
+
+    <string name="otp_valid">El codi OTP és vàlid!</string>
+    <string name="otp_invalid">El codi OTP no és vàlid!</string>
+    <string name="otp_title">Verificació del codi OTP</string>
+    <string name="otp_subtitle">Comprova el teu correu electrònic %1$s per veure el codi de verificació.</string>
+    <string name="otp_button_verify">Verificar</string>
+    <string name="otp_invalid_error">OTP invàlid. Torna-ho a provar.</string>
+
+    <string name="login_successful">Inici de sessió correcte</string>
+
+    <string name="error_email_exists">El correu electrònic ja existeix.</string>
+    <string name="error_unknown">Error desconegut</string>
+    <string name="error_generic">Ha succeït un error: %1$s</string>
+    <string name="error_passwords_do_not_match">Les contrasenyes no coincideixen</string>
+    <string name="error_generic_exception">Ha succeït un error: %1$s</string>
+
+    <string name="set_new_password_title">Estableix una nova contrasenya</string>
+    <string name="set_new_password_subtitle">Ha de tenir almenys 8 caràcters</string>
+    <string name="password_label">Contrasenya</string>
+    <string name="confirm_password_label">Confirma la contrasenya</string>
+    <string name="password_visibility_toggle">Mostra/Oculta la contrasenya</string>
+    <string name="reset_password_button">Restablir la contrasenya</string>
+    <string name="password_reset_successful">Contrasenya restablerta correctament</string>
+
+
+
+    <!-- Catalán (ca) -->
+    <string name="create_product">Crear Producte</string>
+    <string name="edit_product">Editar Producte</string>
+    <string name="cancel">Cancel·lar</string>
+    <string name="delete_product">Eliminar producte</string>
+    <string name="title_required">Títol *</string>
+    <string name="title_cannot_be_empty">El títol no pot estar buit</string>
+    <string name="description_required">Descripció *</string>
+    <string name="description_cannot_be_empty">La descripció no pot estar buida</string>
+    <string name="price">Preu</string>
+    <string name="type_required">Tipus *</string>
+    <string name="type_cannot_be_empty">El tipus no pot estar buit</string>
+    <string name="latitude">Latitud</string>
+    <string name="longitude">Longitud</string>
+    <string name="product_images">Imatges del producte</string>
+    <string name="select_images">Seleccionar imatges</string>
+    <string name="existing_image">Imatge existent</string>
+    <string name="new_image">Imatge nova</string>
+    <string name="delete_image">Eliminar imatge</string>
+    <string name="delete_new_image">Eliminar imatge nova</string>
+    <string name="fill_required_fields">Completa tots els camps obligatoris.</string>
+    <string name="at_least_one_image">Has de pujar almenys una imatge.</string>
+    <string name="save_changes">Desar canvis</string>
+    <string name="validation">Validació</string>
+
+    <string name="profile_image_label">Imatge de perfil</string>
+    <string name="profile_image_content_description">Foto de perfil</string>
+    <string name="change_image_button">Canviar imatge</string>
+    <string name="name_label">Nom</string>
+    <string name="email_label">Correu electrònic</string>
+    <string name="phone_label">Telèfon</string>
+    <string name="save_changes_button">Desar canvis</string>
+    <string name="cancel_button">Cancel·lar</string>
+    <string name="user_profile_title">Perfil d'usuari</string>
+    <string name="logout_button">Sortir</string>
+    <string name="logout_content_description">Tancar sessió</string>
+    <string name="user_name_label">Nom: %1$s</string>
+    <string name="user_email_label">Correu: %1$s</string>
+    <string name="user_phone_label">Telèfon: %1$s</string>
+    <string name="no_phone_text">Sense telèfon</string>
+    <string name="received_reviews_title">Ressenyes rebudes</string>
+    <string name="no_reviews_yet">Aquest usuari encara no té ressenyes.</string>
+    <string name="no_comment_text">Sense comentari</string>
+    <string name="edit_profile_button">Editar perfil</string>
+
+    <!-- Títols i etiquetes -->
+    <string name="rating_screen_title">Valorar el venedor</string>
+    <string name="comment_label">Comentari</string>
+    <string name="send_button">Enviar</string>
+    <string name="back_button_description">Tornar</string>
+
+    <!-- Missatges i estats -->
+    <string name="loading">Carregant...</string>
+    <string name="empty_comment_error">Si us plau, introdueix un comentari.</string>
+    <string name="rating_required_error">Si us plau, selecciona una puntuació.</string>
+
+    <!-- Altres textos -->
+    <string name="rating_stars_description">Estrelles de valoració</string>
+
+
+
+
 
 </resources>

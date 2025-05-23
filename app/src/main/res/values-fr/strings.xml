@@ -1,25 +1,216 @@
 <resources>
-
-    <!--    Loggin Scren  Text for user experience -->
+    <!--    Loggin Scren Text for user experience -->
     <string name="app_name">ClickAndRace</string>
-    <string name="login">Connexion</string>
+    <string name="login">Se connecter</string>
     <string name="email_address">Adresse e-mail</string>
     <string name="password">Mot de passe</string>
-    <string name="forgot_password">Mot de passe oublié ?</string>
-    <string name="login_button">Connexion</string>
-    <string name="signup_question">Vous n\'avez pas de compte ?</string>
-    <string name="signup_action">Inscrivez-vous</string>
+    <string name="forgot_password">Mot de passe oublié?</string>
+    <string name="login_button">Se connecter</string>
+    <string name="signup_question">Vous n\'avez pas de compte?</string>
+    <string name="signup_action">S\'inscrire</string>
     <string name="google_login">Continuer avec Google</string>
     <string name="login_success">Connexion réussie</string>
     <string name="email_not_verified">E-mail non vérifié. OTP envoyé.</string>
     <string name="login_error">Erreur : %1$s</string>
-    <string name="welcome">Bon retour, default !</string>
+    <string name="welcome">Bienvenue de retour!</string>
     <string name="intro_message">Connectez-vous pour commencer</string>
     <string name="signin_with">Ou connectez-vous avec</string>
 
-    <!--  Login Screen Toasr o Error msg  -->
+    <!--  Login Screen Toast o Error msg  -->
     <string name="toast_login_success">Connexion réussie</string>
     <string name="toast_email_not_verified">E-mail non vérifié. OTP envoyé.</string>
     <string name="toast_login_error">Erreur : %1$s</string>
+
+    <!--    All Products Screen-->
+    <string name="title_all_products">Tous les produits</string>
+    <string name="action_search">Rechercher</string>
+    <string name="hint_search_products">Rechercher des produits…</string>
+    <string name="message_no_products_available">Aucun produit disponible pour le moment</string>
+
+    <!-- Product Card -->
+    <string name="content_desc_product_image">Image du produit</string>
+    <string name="text_price">Prix : %s</string>
+    <string name="text_type">Type : %s</string>
+    <string name="text_description_short">%s…</string>
+    <string name="text_no_description">Aucune description</string>
+
+    <!--    ProductDetailsScreen-->
+    <string name="title_product_details">Détails du produit</string>
+    <string name="action_back">Retour</string>
+    <string name="action_edit">Modifier</string>
+    <string name="action_delete">Supprimer</string>
+    <string name="message_edit_not_allowed">Vous ne pouvez pas modifier ce produit car vous n\'êtes pas son créateur.</string>
+    <string name="message_delete_not_allowed">Vous ne pouvez pas supprimer ce produit car vous n\'êtes pas son créateur.</string>
+    <string name="text_description_label">Description :</string>
+    <string name="content_desc_profile_picture">Photo de profil</string>
+    <string name="action_send_email">Envoyer un e-mail</string>
+    <string name="action_call">Appeler</string>
+    <string name="text_email">E-mail : %s</string>
+    <string name="text_phone">Téléphone : %s</string>
+    <string name="no_phone">Pas de téléphone</string>
+
+    <!-- Image Zoom Dialog -->
+    <string name="action_close">Fermer</string>
+    <string name="zoom_indicator">Zoom : %d%%</string>
+
+    <!-- Loading & Empty State -->
+    <string name="loading_product">Chargement du produit…</string>
+
+    <!--    CreateEditProductScreen-->
+    <string name="title_create_product">Créer un produit</string>
+    <string name="title_edit_product">Modifier le produit</string>
+    <string name="button_cancel">Annuler</string>
+    <string name="button_delete_product">Supprimer le produit</string>
+    <string name="button_save_changes">Sauvegarder les modifications</string>
+    <string name="button_create_product">Créer un produit</string>
+    <string name="button_select_image">Sélectionner une image (4:3)</string>
+    <string name="button_ok">OK</string>
+    <string name="button_confirm">Oui, supprimer</string>
+    <string name="button_cancel_action">Annuler</string>
+
+    <string name="label_title">Titre</string>
+    <string name="label_description">Description</string>
+    <string name="label_price">Prix</string>
+    <string name="label_type">Type</string>
+    <string name="label_latitude">Latitude</string>
+    <string name="label_longitude">Longitude</string>
+    <string name="label_images">Images du produit</string>
+
+    <string name="error_title_required">Le titre ne peut pas être vide</string>
+    <string name="error_description_required">La description ne peut pas être vide</string>
+    <string name="error_type_required">Le type ne peut pas être vide</string>
+    <string name="error_at_least_one_image">Vous devez télécharger au moins une image.</string>
+    <string name="error_complete_required_fields">Complétez tous les champs obligatoires.</string>
+
+    <string name="dialog_title_validation">Validation</string>
+    <string name="dialog_title_delete_product">Supprimer le produit ?</string>
+    <string name="dialog_message_delete_product">Êtes-vous sûr de vouloir supprimer ce produit ? Cette action ne peut pas être annulée.</string>
+
+    <string name="content_desc_existing_image">Image existante</string>
+    <string name="content_desc_new_image">Nouvelle image</string>
+    <string name="content_desc_delete_image">Supprimer l\'image</string>
+
+    <string name="home_title">Accueil</string>
+    <string name="zona_title">Zone</string>
+    <string name="add_title">Ajouter</string>
+    <string name="mi_lista_title">Transactions</string>
+    <string name="perfil_title">Profil</string>
+
+    <!--work in progres screen -->
+    <string name="content_description_icon">Icône de l\'application</string>
+    <string name="work_in_progress_message">"Nous travaillons sur cela "</string>
+    <string name="work_in_progress_detail">Cette section sera bientôt disponible. Merci de votre patience!</string>
+
+    <!--    AddLocationDialog-->
+    <string name="new_location">Nouvel emplacement</string>
+    <string name="name">Nom</string>
+    <string name="select_type">Sélectionner un type</string>
+    <string name="other">Autre…</string>
+    <string name="enter_new_type">Entrez un nouveau type</string>
+
+    <!--    DeleteLocationDialog-->
+    <string name="delete_location_title">Supprimer l\'emplacement</string>
+    <string name="delete_location_confirmation">Êtes-vous sûr de vouloir supprimer "%1$s"?</string>
+    <string name="edit_location">Modifier l\'emplacement</string>
+
+    <!--    busqueda -->
+    <string name="search_location_label">Rechercher un emplacement</string>
+    <string name="search_placeholder">Tapez pour rechercher…</string>
+
+    <string name="register_title">Créez votre compte !</string>
+    <string name="register_subtitle">Inscrivez-vous pour commencer votre aventure ClickAndRace</string>
+    <string name="full_name">Nom complet</string>
+    <string name="agree_to">"J'accepte les \"condiciones\" - "</string>
+    <string name="sign_up">S\'inscrire</string>
+    <string name="already_have_account">Vous avez déjà un compte ?</string>
+    <string name="sign_in">Se connecter</string>
+
+        <string name="otp_sent_success">Code OTP envoyé avec succès</string>
+        <string name="reset_password_title">Réinitialisez votre mot de passe</string>
+        <string name="reset_password_subtitle">Veuillez entrer votre adresse e-mail et nous vous enverrons un code OTP à l\'étape suivante pour réinitialiser votre mot de passe</string>
+        <string name="email_icon">Icône d\'e-mail</string>
+        <string name="send_otp">Envoyer le code</string>
+
+    <string name="dialog_search_confirm">Recentrer sur la carte</string>
+
+
+    <!-- Francés (fr) -->
+    <string name="signup_error_email_exists">L’email existe déjà.</string>
+    <string name="signup_error_unknown">Erreur inconnue</string>
+    <string name="signup_error_generic">Une erreur est survenue : %1$s</string>
+
+    <string name="validation_error_invalid_email">Veuillez entrer un email valide</string>
+    <string name="validation_error_short_password">Le mot de passe doit contenir au moins 6 caractères</string>
+    <string name="validation_error_terms_not_accepted">Vous devez accepter les conditions</string>
+    <string name="validation_error_invalid_name">Veuillez entrer un nom valide</string>
+
+    <string name="otp_valid">Le code OTP est valide !</string>
+    <string name="otp_invalid">Le code OTP est invalide !</string>
+    <string name="otp_title">Vérification du code OTP</string>
+    <string name="otp_subtitle">Veuillez vérifier votre email %1$s pour voir le code de vérification.</string>
+    <string name="otp_button_verify">Vérifier</string>
+    <string name="otp_invalid_error">OTP invalide. Veuillez réessayer.</string>
+
+    <string name="login_successful">Connexion réussie</string>
+
+    <string name="error_email_exists">L’email existe déjà.</string>
+    <string name="error_unknown">Erreur inconnue</string>
+    <string name="error_generic">Une erreur est survenue : %1$s</string>
+    <string name="error_passwords_do_not_match">Les mots de passe ne correspondent pas</string>
+    <string name="error_generic_exception">Une erreur est survenue : %1$s</string>
+
+    <string name="set_new_password_title">Définir un nouveau mot de passe</string>
+    <string name="set_new_password_subtitle">Doit contenir au moins 8 caractères</string>
+    <string name="password_label">Mot de passe</string>
+    <string name="confirm_password_label">Confirmer le mot de passe</string>
+    <string name="password_visibility_toggle">Afficher/Masquer le mot de passe</string>
+    <string name="reset_password_button">Réinitialiser le mot de passe</string>
+    <string name="password_reset_successful">Réinitialisation du mot de passe réussie</string>
+
+    <!-- Francés (fr) -->
+    <string name="create_product">Créer un produit</string>
+    <string name="edit_product">Modifier le produit</string>
+    <string name="cancel">Annuler</string>
+    <string name="delete_product">Supprimer le produit</string>
+    <string name="title_required">Titre *</string>
+    <string name="title_cannot_be_empty">Le titre ne peut pas être vide</string>
+    <string name="description_required">Description *</string>
+    <string name="description_cannot_be_empty">La description ne peut pas être vide</string>
+    <string name="price">Prix</string>
+    <string name="type_required">Type *</string>
+    <string name="type_cannot_be_empty">Le type ne peut pas être vide</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="product_images">Images du produit</string>
+    <string name="select_images">Sélectionner des images</string>
+    <string name="existing_image">Image existante</string>
+    <string name="new_image">Nouvelle image</string>
+    <string name="delete_image">Supprimer l\'image</string>
+    <string name="delete_new_image">Supprimer la nouvelle image</string>
+    <string name="fill_required_fields">Veuillez remplir tous les champs obligatoires.</string>
+    <string name="at_least_one_image">Vous devez télécharger au moins une image.</string>
+    <string name="save_changes">Enregistrer les modifications</string>
+    <string name="validation">Validation</string>
+
+    <string name="profile_image_label">Image de profil</string>
+    <string name="profile_image_content_description">Photo de profil</string>
+    <string name="change_image_button">Changer l\'image</string>
+    <string name="name_label">Nom</string>
+    <string name="email_label">E-mail</string>
+    <string name="phone_label">Téléphone</string>
+    <string name="save_changes_button">Enregistrer les modifications</string>
+    <string name="cancel_button">Annuler</string>
+    <string name="user_profile_title">Profil utilisateur</string>
+    <string name="logout_button">Déconnexion</string>
+    <string name="logout_content_description">Se déconnecter</string>
+    <string name="user_name_label">Nom : %1$s</string>
+    <string name="user_email_label">E-mail : %1$s</string>
+    <string name="user_phone_label">Téléphone : %1$s</string>
+    <string name="no_phone_text">Pas de téléphone</string>
+    <string name="received_reviews_title">Avis reçus</string>
+    <string name="no_reviews_yet">Cet utilisateur n’a pas encore d’avis.</string>
+    <string name="no_comment_text">Pas de commentaire</string>
+    <string name="edit_profile_button">Modifier le profil</string>
+
 
 </resources>

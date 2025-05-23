@@ -28,9 +28,10 @@ fun BottomNavigationBar(navController: NavController) {
     val currentRoute = currentBackStackEntry?.destination?.route
 
     // Define el contenedor de la barra inferior
+    // Define el contenedor de la barra inferior usando los colores del tema
     NavigationBar(
-        containerColor = Color.White,
-        contentColor = Color.Black
+        containerColor = MaterialTheme.colorScheme.surface, // Color de fondo de la barra de navegación
+        contentColor = MaterialTheme.colorScheme.onSurface // Color de los iconos y texto en la barra
     ) {
         // Recorre todos los ítems definidos en BottomBar y crea un ícono por cada uno
         BottomBar.items.forEach { screen ->

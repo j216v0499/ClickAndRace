@@ -80,7 +80,7 @@ fun LanguageSelector(onLanguageSelected: (String) -> Unit) {
         // Botón de idioma
         OutlinedButton(
             onClick = { if (!isLoading) expanded = true },
-            border = BorderStroke(1.dp, Color.Gray),
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
             shape = CircleShape,
             modifier = Modifier.wrapContentSize(),
             enabled = !isLoading
@@ -96,7 +96,7 @@ fun LanguageSelector(onLanguageSelected: (String) -> Unit) {
                         contentDescription = null,
                         modifier = Modifier.size(20.dp),
                         contentScale = ContentScale.Fit,
-                        colorFilter = if (isLoading) ColorFilter.tint(Color.Gray) else null
+                        colorFilter = if (isLoading) ColorFilter.tint(MaterialTheme.colorScheme.outline) else null
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                 }
@@ -104,7 +104,7 @@ fun LanguageSelector(onLanguageSelected: (String) -> Unit) {
                 // Muestra el nombre del idioma seleccionado
                 Text(
                     text = languageLabels[selectedLang] ?: selectedLang,
-                    color = if (isLoading) Color.Gray else Color.Black
+                    color = if (isLoading) MaterialTheme.colorScheme.outline else MaterialTheme.colorScheme.onBackground
                 )
 
                 // Muestra un indicador de carga si está cargando
@@ -113,7 +113,7 @@ fun LanguageSelector(onLanguageSelected: (String) -> Unit) {
                     CircularProgressIndicator(
                         modifier = Modifier.size(16.dp),
                         strokeWidth = 2.dp,
-                        color = Color(0xFF3A82F7)
+                        color = MaterialTheme.colorScheme.primary
                     )
                 }
             }
