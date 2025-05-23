@@ -1,18 +1,11 @@
 package com.dearos.clickandrace.ui.screens.main
-/*
-class MainViewModel {
-}
 
-package com.dearos.clickandrace.auth.presentation.main
-*/
-import SessionManager
 import android.app.Application
 import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.dearos.clickandrace.LogsLogger
 import com.dearos.clickandrace.ui.navigation.AuthScreen
-import com.dearos.clickandrace.util.LanguageLocaleHelper
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.auth.status.SessionStatus
@@ -55,10 +48,6 @@ class MainViewModel(
     private val _toastMessageFlow = MutableSharedFlow<String>()
     val toastMessageFlow = _toastMessageFlow.asSharedFlow()
 
-
-//    private val _language = MutableStateFlow(LanguageLocaleHelper.getCurrentLanguage())
-//    val language = _language
-
     init {
         viewModelScope.launch(Dispatchers.IO) {
             // Espera a que el sistema de autenticación de Supabase se inicialice.
@@ -87,8 +76,6 @@ class MainViewModel(
             // Actualiza el estado de la UI en el hilo principal.
             withContext(Dispatchers.Main) {
                 _uiState.value = MainUiState(isLoading = false, startDestination = destination)
-                //TODO
-                SessionManager.saveSession(getApplication(), session != null)
             }
         }
         // Comienza a escuchar eventos de autenticación.
@@ -143,6 +130,4 @@ class MainViewModel(
             }
         }
     }
-
-
 }
