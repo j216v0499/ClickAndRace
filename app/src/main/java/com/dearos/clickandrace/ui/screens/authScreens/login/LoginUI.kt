@@ -5,10 +5,20 @@ import androidx.activity.compose.LocalActivity
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
@@ -35,24 +45,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dearos.clickandrace.LogsLogger
-import org.koin.androidx.compose.koinViewModel
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
 import com.dearos.clickandrace.R
-import com.dearos.clickandrace.ui.components.LanguageSelector
+import com.dearos.clickandrace.ui.componentsUI.LanguageSelector
 import com.dearos.clickandrace.util.LanguageLocaleHelper
-
-
-//class LogginUI {
-//}
-
+import org.koin.androidx.compose.koinViewModel
 
 /**
  * Pantalla de inicio de sesión de la aplicación.
@@ -82,6 +87,8 @@ fun LoginScreen(
 
     // Estado actual del formulario
     val state = viewModel.state
+    val scrollState = rememberScrollState()
+
     val context = LocalContext.current
 
     // Obtener la actividad actual del entorno Compose
@@ -96,31 +103,34 @@ fun LoginScreen(
         viewModel.validationEvents.collect { event ->
             when (event) {
                 is LoginViewModel.ValidationEvent.Success -> {
-                    Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, context.getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
                     navigateToHome()
                 }
                 is LoginViewModel.ValidationEvent.EmailNotVerified -> {
-                    Toast.makeText(context, "Email not verified. OTP sent.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, context.getString(R.string.email_not_verified), Toast.LENGTH_LONG).show()
                     navigateToOtp(event.email)
                 }
                 is LoginViewModel.ValidationEvent.Failure -> {
                     LogsLogger.e("LoginUI.kt", "Error: ${event.error}")
-                    Toast.makeText(context, "Error: ${event.error}", Toast.LENGTH_LONG).show()
+                    val errorMessage = context.getString(R.string.login_error, event.error)
+                    Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
                 }
             }
         }
     }
 
 
-
-    // Contenedor principal vertical
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(16.dp)
     ) {
-
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+                .verticalScroll(scrollState) // <- scroll aquí
+        ) {
 
         LanguageSelector { langCode ->
             LanguageLocaleHelper.setCurrentLanguage(context, langCode)
@@ -273,7 +283,7 @@ fun LoginScreen(
                 modifier = Modifier.size(23.dp)
             )
             Spacer(modifier = Modifier.width(10.dp))
-            Text(text = stringResource(id = R.string.google_login), color = Color.Black)
+            Text(text = stringResource(id = R.string.google_login), color =  MaterialTheme.colorScheme.onBackground)
 
             if (state.isGoogleLoading) {
                 Spacer(modifier = Modifier.width(10.dp))
@@ -299,14 +309,16 @@ fun LoginScreen(
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(text = stringResource(id = R.string.signup_question))
+                Text(text = stringResource(id = R.string.signup_question),
+                    color =  MaterialTheme.colorScheme.onBackground)
                 Spacer(modifier = Modifier.width(4.dp))
                 Text(
                     text = stringResource(id = R.string.signup_action),
-                    color = Color(0xFF3A82F7),
+                    color = Color(0xFF3A82F7)       ,
                     modifier = Modifier.clickable { navigateToSignUp() }
                 )
             }
         }
+    }
     }
 }
