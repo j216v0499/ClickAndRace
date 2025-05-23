@@ -46,6 +46,9 @@ fun EditLocationDialog(
     var searchQuery by remember { mutableStateOf("") }
     var selectedLocation by remember { mutableStateOf<LocationData?>(null) }
 
+
+    val userId by viewModel.currentUserId.collectAsState()
+
     // Precargar los campos cuando se selecciona una ubicación
     LaunchedEffect(selectedLocation) {
         selectedLocation?.let {
@@ -85,7 +88,9 @@ fun EditLocationDialog(
                         onLocationSelected = {
                             selectedLocation = it
                             searchQuery = it.name
-                        }
+                        },
+                        userId = userId // <-- Este valor viene de viewModel.currentUserId.collectAsState().value
+
                     )
                 } else {
                     // Campos editables
@@ -176,13 +181,19 @@ fun EditLocationDialog(
                         !finalType.isNullOrBlank()
                     ) {
                         coroutineScope.launch {
-                            viewModel.updateLocation(
-                                selectedLocation!!.id,
-                                newName,
-                                newLat.toDouble(),
-                                newLon.toDouble(),
-                                finalType
-                            )
+
+                                userId?.let {
+                                    viewModel.updateLocation(
+
+                                        selectedLocation!!.id,
+                                        it,
+                                        newName,
+                                        newLat.toDouble(),
+                                        newLon.toDouble(),
+                                        finalType
+                                    )
+                                }
+
                             onDismiss()
                         }
                     }
