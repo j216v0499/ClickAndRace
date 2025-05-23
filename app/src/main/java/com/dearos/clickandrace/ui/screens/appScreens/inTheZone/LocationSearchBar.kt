@@ -29,11 +29,15 @@ fun LocationSearchBar(
     onSearchQueryChange: (String) -> Unit,
     onLocationSelected: (LocationData) -> Unit,
     modifier: Modifier = Modifier,
+    userId: String? = null, // <-- nuevo parámetro
 ) {
-    // Filtrar ubicaciones por coincidencia de nombre
-    val filteredLocations = locations.filter {
-        it.name.contains(searchQuery, ignoreCase = true)
-    }.sortedBy { it.name.lowercase() }
+
+    val filteredLocations = locations
+        .filter {
+            (userId == null || it.user_id == userId) &&
+                    it.name.contains(searchQuery, ignoreCase = true)
+        }
+        .sortedBy { it.name.lowercase() }
 
     Column(modifier = modifier) {
         // Campo de búsqueda
