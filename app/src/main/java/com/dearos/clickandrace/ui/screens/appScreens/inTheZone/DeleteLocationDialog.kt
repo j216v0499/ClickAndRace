@@ -34,6 +34,8 @@ fun DeleteLocationDialog(
     // Estado para la ubicación seleccionada
     var selectedLocation by remember { mutableStateOf<LocationData?>(null) }
 
+    val userId by viewModel.currentUserId.collectAsState()
+
     AlertDialog(
         onDismissRequest = onDismiss,
 
@@ -54,9 +56,11 @@ fun DeleteLocationDialog(
                     onLocationSelected = {
                         selectedLocation = it
                         searchQuery = it.name
-                    }
-                )
+                    },
+                    userId = userId // <-- Este valor viene de viewModel.currentUserId.collectAsState().value
 
+
+                )
                 Spacer(modifier = Modifier.height(8.dp))
 
                 // Si se ha seleccionado una ubicación, mostrar mensaje de confirmación
